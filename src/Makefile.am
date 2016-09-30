@@ -669,6 +669,16 @@ mbmon_la_LIBADD += -lsocket
 endif
 endif
 
+if BUILD_PLUGIN_MCELOGMON
+pkglib_LTLIBRARIES += mcelogmon.la
+mcelogmon_la_SOURCES = mcelogmon.c
+mcelogmon_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+mcelogmon_la_LIBADD =
+if BUILD_WITH_LIBSOCKET
+mcelogmon_la_LIBADD += -lsocket
+endif
+endif
+
 if BUILD_PLUGIN_MD
 pkglib_LTLIBRARIES += md.la
 md_la_SOURCES = md.c
