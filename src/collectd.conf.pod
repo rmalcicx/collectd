@@ -3315,11 +3315,11 @@ TCP-Port to connect to. Defaults to B<411>.
 
 =back
 
-=head2 Plugin C<mcelogmon>
+=head2 Plugin C<mcelog>
 
-The C<mcelogmon plugin> uses mcelog to retrieve machine check errors, etc.
+The C<mcelog plugin> uses mcelog to retrieve machine check exceptions, etc.
 
-By default mcelogmon connects to B<"/var/run/mcelog-client"> to check if the
+By default the plugin connects to B<"/var/run/mcelog-client"> to check if the
 mcelog server is running. When the server is running, the plugin will tail the
 specified logfile to retrieve machine check exception information and send a
 notification with the details from the logfile. The plugin will use the mcelog
