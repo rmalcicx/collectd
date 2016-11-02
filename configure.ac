@@ -5792,6 +5792,7 @@ plugin_ipvs="no"
 plugin_irq="no"
 plugin_load="no"
 plugin_log_logstash="no"
+plugin_mcelog="no"
 plugin_memory="no"
 plugin_multimeter="no"
 plugin_nfs="no"
@@ -5840,6 +5841,7 @@ then
 	plugin_irq="yes"
 	plugin_load="yes"
 	plugin_lvm="yes"
+	plugin_mcelog="yes"
 	plugin_memory="yes"
 	plugin_nfs="yes"
 	plugin_numa="yes"
@@ -6263,7 +6265,7 @@ AC_PLUGIN([match_regex],         [yes],                     [The regex match])
 AC_PLUGIN([match_timediff],      [yes],                     [The timediff match])
 AC_PLUGIN([match_value],         [yes],                     [The value match])
 AC_PLUGIN([mbmon],               [yes],                     [Query mbmond])
-AC_PLUGIN([mcelog],              [yes],                     [Machine Check Exceptions notifications])
+AC_PLUGIN([mcelog],              [$plugin_mcelog],          [Machine Check Exceptions notifications])
 AC_PLUGIN([md],                  [$have_linux_raid_md_u_h], [md (Linux software RAID) devices])
 AC_PLUGIN([memcachec],           [$with_libmemcached],      [memcachec statistics])
 AC_PLUGIN([memcached],           [yes],                     [memcached statistics])

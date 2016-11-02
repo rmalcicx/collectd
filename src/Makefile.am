@@ -657,9 +657,6 @@ pkglib_LTLIBRARIES += mcelog.la
 mcelog_la_SOURCES = mcelog.c
 mcelog_la_LDFLAGS = $(PLUGIN_LDFLAGS)
 mcelog_la_LIBADD =
-if BUILD_WITH_LIBSOCKET
-mcelog_la_LIBADD += -lsocket
-endif
 endif
 
 if BUILD_PLUGIN_MD
