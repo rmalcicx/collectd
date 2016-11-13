@@ -121,10 +121,14 @@ static int fd_shutdown(void) {
 static int connect_to_client_socket(void) {
   char errbuff[MCELOG_BUFF_SIZE];
   struct timeval socket_timeout;
+  int flags;
   cdtime_t interval = plugin_get_interval();
   CDTIME_T_TO_TIMEVAL(interval, &socket_timeout);
 
-  g_mcelog_config.sock_fd = socket(PF_UNIX, SOCK_STREAM | SOCK_NONBLOCK, 0);
+  g_mcelog_config.sock_fd = socket(PF_UNIX, SOCK_STREAM, 0);
+  flags = fcntl(g_mcelog_config.sock_fd, F_GETFL, 0);
+  flags |= O_NONBLOCK;
+  fcntl(g_mcelog_config.sock_fd, F_SETFL, flags);
 
   if (g_mcelog_config.sock_fd < 0) {
     ERROR("%s: Could not create a socket. %s", MCELOG_PLUGIN,
