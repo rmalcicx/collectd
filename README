@@ -203,9 +203,9 @@ Features
       using mbmon(1).
 
     - mcelog
-      Logs and accounts machine check exceptions (in particular memory, IO, and
-      CPU hardware errors) on modern x86 Linux systems.
-      <http://www.mcelog.org>
+      Monitor machine check exceptions (hardware errors detected by hardware
+      and reported to software) reported by mcelog and generate appropriate
+      notifications when machine check exceptions are detected.
 
     - md
       Linux software-RAID device information (number of active, failed, spare
